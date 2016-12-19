@@ -44,6 +44,7 @@
 		<input type="hidden" name="User_LEVEL" value="구매자"/>
 		<input type="hidden" name="User_POINT" value="0"/>
 		<input type="submit" value="입력완료" />
+		<input type="reset" value="초기화"/>
 		</center>
 	
 	</form>
