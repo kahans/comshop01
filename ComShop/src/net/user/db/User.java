@@ -1,6 +1,6 @@
 package net.user.db;
 
-public class UserBean {
+public class User {
 	private String USERID;
 	private String USERPW;
 	private String USERNAME;

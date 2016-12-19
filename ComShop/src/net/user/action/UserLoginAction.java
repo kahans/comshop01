@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import net.user.action.ActionForward;
-import net.user.db.UserBean;
+import net.user.db.User;
 import net.user.db.UserDao;
 
 public class UserLoginAction implements UserAction {
@@ -18,7 +18,7 @@ public class UserLoginAction implements UserAction {
 		//로그인하고 정보를 유지 하기 위해 세션을 설정
 		request.setCharacterEncoding("euc-kr");
 		HttpSession session = request.getSession();
-		UserBean user= new UserBean();
+		User user= new User();
 		UserDao uDao= new UserDao();
 		
 		int result = -2;

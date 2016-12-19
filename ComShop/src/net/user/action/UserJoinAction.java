@@ -3,7 +3,7 @@ package net.user.action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.user.db.UserBean;
+import net.user.db.User;
 import net.user.db.UserDao;
 
 public class UserJoinAction implements UserAction {
@@ -14,7 +14,7 @@ public class UserJoinAction implements UserAction {
 		//ActionForward클래스에 forward 객체참조변수를 선언 생성자 메서드 ActionForward를 객체(인스턴스)를 생성한다.
 		ActionForward forward= new ActionForward();
 		//UserBean클래스에 user 객체참조변수를 선언 생성자 메서드 UserBean를 객체를 생성한다.
-		UserBean user= new UserBean();
+		User user= new User();
 		UserDao uDao= new UserDao();
 		boolean result = false;
 		

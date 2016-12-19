@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>회원가입</title>
+<title>Insert title here</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,7 +12,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>장바구니</title>
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */ 
     .navbar {
@@ -33,7 +33,6 @@
   </style>
 </head>
 <body>
-
 <div class="jumbotron">
   <div class="container text-center">
     <h1>Online Store</h1>      
@@ -69,48 +68,9 @@
     </div>
   </div>
 </nav>
-	<form action="./UserJoinAction.us" method="post" name="joinform">
-		<center>
-			<table>
-			<tr>
-				<td colspan="2" align="center">
-					<b><font size=4 >회원가입</font></b>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">아이디 :&nbsp;</td>
-				<td><input type="text" name="User_ID"/></td>
-			</tr>
-			<tr>
-				<td align="right">비밀번호 :&nbsp;</td>
-				<td><input type="password" name="User_PW"/></td>
-			</tr>
-			<tr>
-				<td align="right">이름 :&nbsp;</td>
-				<td><input type="text" name="User_NAME"/></td>
-			</tr>
-			<tr>
-				<td align="right">주소 :&nbsp;</td>
-				<td ><input type="text" name="User_ADDR"/></td>
-			</tr>
-			<tr>
-				<td align="right">전화번호 :&nbsp;</td>
-				<td><input type="text" name="User_HP"/></td>
-			</tr>
-			<tr>
-				<td align="right">Email :&nbsp;</td>
-				<td ><input type="text" name="User_EMAIL"/></td>
-			</tr>
-			
-			</table>
-			<br/>
-		<input type="hidden" name="User_LEVEL" value="구매자"/>
-		<input type="hidden" name="User_POINT" value="0"/>
-		<input type="submit" value="입력완료" />
-		<input type="reset" value="초기화"/>
-		</center>
-	
-	</form>
+<!-- 장바구니 리스트 -->
+
+
 
 </body>
 </html>

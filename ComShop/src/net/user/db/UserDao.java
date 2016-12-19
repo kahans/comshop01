@@ -24,7 +24,7 @@ public class UserDao {
 		}
 	}
 	//user login
-	public int loginAdmin(UserBean user){
+	public int loginAdmin(User user){
 		String sql = "SELECT * FROM usertb WHERE user_id=?";
 		int result = -1;
 		
@@ -64,7 +64,7 @@ public class UserDao {
 	}
 	
 	//user 회원리스트
-	public boolean JoinUser(UserBean user){
+	public boolean JoinUser(User user){
 		String sql=null;
 		boolean result=false;
 		try{
