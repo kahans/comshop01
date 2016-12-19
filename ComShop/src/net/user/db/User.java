@@ -1,14 +1,14 @@
 package net.user.db;
 
 public class User {
-	private String USERID;
-	private String USERPW;
-	private String USERNAME;
-	private String USERLEVEL;
-	private String USERADDR;
-	private String USERHP;
-	private String USEREMAIL;
-	private Integer USERPOINT;
+	private String		USERID;		//아이디
+	private String		USERPW;		//비밀번호
+	private String		USERNAME;	//이름
+	private String		USERLEVEL;	//권한
+	private String		USERADDR;	//주소
+	private String		USERHP;		//전화번호
+	private String		USEREMAIL;	//이메일
+	private Integer		USERPOINT;	//포인트
 	/**
 	 * @return the uSERID
 	 */

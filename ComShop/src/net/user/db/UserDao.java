@@ -4,33 +4,24 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
+import net.user.action.DBConnect;
+
+
+
 
 
 public class UserDao {
-	DataSource ds;
-	Connection conn;
+	Connection connection;
 	PreparedStatement pstmt;
 	ResultSet rs;
 	
-	public UserDao(){
-		try{
-			Context init = new InitialContext();
-			ds=(DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
-		}catch(Exception e){
-			return;
-		}
-	}
 	//user login
-	public int loginAdmin(User user){
-		String sql = "SELECT * FROM usertb WHERE user_id=?";
+	public int loginAdmin(User user) throws Exception{
 		int result = -1;
-		
+		DBConnect db= new DBConnect();
 		try{
-			conn=ds.getConnection();
-			pstmt=conn.prepareStatement(sql);
+			connection = db.driverDbcon();
+			pstmt=connection.prepareStatement("SELECT * FROM membertb WHERE user_id=?");
 			pstmt.setString(1, user.getUSERID());
 			rs=pstmt.executeQuery();
 			if(rs.next()){
@@ -56,7 +47,7 @@ public class UserDao {
 			try{
 				if(rs!=null)rs.close();
 				if(pstmt!=null)pstmt.close();
-				if(conn!=null)conn.close();
+				if(connection!=null)connection.close();
 			}catch(Exception ex) {}
 		}
 		
@@ -64,13 +55,10 @@ public class UserDao {
 	}
 	
 	//user 회원리스트
-	public boolean JoinUser(User user){
-		String sql=null;
+	public boolean JoinUser(User user) throws Exception{
 		boolean result=false;
-		try{
-			conn=ds.getConnection();
-			sql="INSERT INTO usertb VALUES(?,?,?,?,?,?,?,?)";
-			pstmt= conn.prepareStatement(sql);
+		try{	
+			pstmt= connection.prepareStatement("INSERT INTO membertb VALUES(?,?,?,?,?,?,?,?)");
 			pstmt.setString(1, user.getUSERID());
 			pstmt.setString(2, user.getUSERPW());
 			pstmt.setString(3, user.getUSERNAME());
@@ -88,7 +76,7 @@ public class UserDao {
 		}finally{
 			try{
 				if(pstmt!=null)pstmt.close();
-				if(conn!=null)conn.close();
+				if(connection!=null)connection.close();
 			}catch(Exception ex) {}
 		}
 		return result;
