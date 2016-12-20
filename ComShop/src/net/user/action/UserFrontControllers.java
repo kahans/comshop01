@@ -28,34 +28,42 @@ public class UserFrontControllers extends javax.servlet.http.HttpServlet impleme
 		ActionForward forward = null;
 		UserAction action = null;
 
-		if (command.equals("/user/UserLogin.us")) {
+		if (command.equals("/user/UserLogin.us")) {//로그인 경로
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./user_login.jsp");
-		} else if (command.equals("/user/UserJoin.us")) {
+		} else if (command.equals("/user/UserJoin.us")) {//회원가입  경로
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./user_join.jsp");
-		} else if(command.equals("/user/main.us")){
+		} else if(command.equals("/user/main.us")){//메인화면 경로
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./main.jsp");
-		} else if (command.equals("/user/UserJoinAction.us")) {
+		} else if(command.equals("/user/UserListAction.us")){
+			action = new UserListAction();
+			try{
+				forward = action.execute(request, response);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		} else if (command.equals("/user/UserJoinAction.us")) {//회원가입 액션 경로
+			
 			action = new UserJoinAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if (command.equals("/user/UserLoginAction.us")) {
+		}else if (command.equals("/user/UserLoginAction.us")) {//로그인 액션 경로
 			action = new UserLoginAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
 		}
+		
 		if (forward != null) {
 			if (forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());

@@ -91,7 +91,7 @@ footer {
 						String SLEVEL = (String) session.getAttribute("level");
 						if (SLEVEL == null) {
 					%>
-					<li><a href="<%=request.getContextPath()%>/user/user_login.jsp"><span
+					<li><a href="<%=request.getContextPath()%>/user/UserLogin.us"><span
 							class="glyphicon glyphicon-user"></span>로그인</a></li>
 					<%
 						} else {
@@ -99,7 +99,7 @@ footer {
 					<%
 						if (SLEVEL.equals("관리자")) {
 					%>
-					<li><a href="#">전체회원목록</a></li>
+					<li><a href="<%=request.getContextPath()%>/user/UserListAction.us">전체회원목록</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-user"></span><%=SNAME%>&nbsp;님</a></li>
 					<!-- 클릭시 회원정보 수정 할수 있도록 경로를 잡자 -->
 					<li><a
