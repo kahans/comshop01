@@ -1,6 +1,7 @@
 package net.user.db;
 
 public class User {
+	private int			No;	
 	private String		USERID;		//아이디
 	private String		USERPW;		//비밀번호
 	private String		USERNAME;	//이름
@@ -9,6 +10,18 @@ public class User {
 	private String		USERHP;		//전화번호
 	private String		USEREMAIL;	//이메일
 	private Integer		USERPOINT;	//포인트
+	/**
+	 * @return the no
+	 */
+	public int getNo() {
+		return No;
+	}
+	/**
+	 * @param no the no to set
+	 */
+	public void setNo(int no) {
+		No = no;
+	}
 	/**
 	 * @return the uSERID
 	 */

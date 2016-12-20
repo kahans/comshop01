@@ -36,6 +36,10 @@ public class UserFrontControllers extends javax.servlet.http.HttpServlet impleme
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./user_join.jsp");
+		} else if(command.equals("/user/main.us")){
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("./main.jsp");
 		} else if (command.equals("/user/UserJoinAction.us")) {
 			action = new UserJoinAction();
 			try {
@@ -43,7 +47,6 @@ public class UserFrontControllers extends javax.servlet.http.HttpServlet impleme
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
 		}else if (command.equals("/user/UserLoginAction.us")) {
 			action = new UserLoginAction();
 			try {

@@ -10,7 +10,7 @@ public class DBConnect  {
 		Connection reconn=null;
 		Class.forName("com.mysql.jdbc.Driver");
 		
-		String jdbcDriver = "jdbc:mysql://localhost:3306/dev22db?" +
+		String jdbcDriver = "jdbc:mysql://localhost:3306/dev22db07?" +
 				"useUnicode=true&characterEncoding=euckr";
 		String dbUser = "dev22id07";
 		String dbPass = "dev22pw07";

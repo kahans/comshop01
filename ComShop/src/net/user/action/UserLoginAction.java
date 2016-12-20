@@ -60,10 +60,10 @@ public class UserLoginAction implements UserAction {
    		//로그인 성공
    		session.setAttribute("id", user.getUSERID());
    		session.setAttribute("level", user.getUSERLEVEL());
-   		System.out.println(user.getUSERID()+"id 로그인 성공");
-   		System.out.println(user.getUSERLEVEL()+"level 로그인성공");
+   		System.out.println(user.getUSERID()+"<--id 로그인 성공");
+   		System.out.println(user.getUSERLEVEL()+"<--level 로그인성공");
    		forward.setRedirect(true);
-   		forward.setPath("./Main.us");
+   		forward.setPath("./main.us");
    		return forward;
 	
 	}

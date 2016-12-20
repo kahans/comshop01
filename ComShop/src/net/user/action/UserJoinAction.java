@@ -18,7 +18,6 @@ public class UserJoinAction implements UserAction {
 		UserDao uDao= new UserDao();
 		boolean result = false;
 		
-		
 		user.setUSERID(request.getParameter("User_ID"));
 		user.setUSERPW(request.getParameter("User_PW"));
 		user.setUSERNAME(request.getParameter("User_NAME"));
@@ -35,7 +34,7 @@ public class UserJoinAction implements UserAction {
 			return null;
 		}
 		forward.setRedirect(true);
-		forward.setPath("./UserLogin.us");
+		forward.setPath("./main.us");
 		
 		return forward;
 	}

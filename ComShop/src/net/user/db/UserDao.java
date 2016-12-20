@@ -17,9 +17,9 @@ public class UserDao {
 	
 	//user login
 	public int loginAdmin(User user) throws Exception{
-		int result = -1;
-		DBConnect db= new DBConnect();
+		int result = -1;		
 		try{
+			DBConnect db= new DBConnect();
 			connection = db.driverDbcon();
 			pstmt=connection.prepareStatement("SELECT * FROM membertb WHERE user_id=?");
 			pstmt.setString(1, user.getUSERID());
@@ -28,6 +28,7 @@ public class UserDao {
 				if(rs.getString("User_PW").equals(user.getUSERPW())){
 					if(rs.getString("User_LEVEL").equals(user.getUSERLEVEL())){
 						result =1;
+						rs.getString(user.getUSERNAME());
 						System.out.println("아이디 비번 권한까지 맞음");
 					}else{
 						result =-2;
@@ -58,7 +59,10 @@ public class UserDao {
 	public boolean JoinUser(User user) throws Exception{
 		boolean result=false;
 		try{	
-			pstmt= connection.prepareStatement("INSERT INTO membertb VALUES(?,?,?,?,?,?,?,?)");
+			DBConnect db= new DBConnect();
+			connection = db.driverDbcon();
+			pstmt= connection.prepareStatement("INSERT INTO membertb(user_id,user_pw,user_name,user_level,user_addr,user_hp,user_email,user_point)"
+					+ " VALUES(?,?,?,?,?,?,?,?,?)");
 			pstmt.setString(1, user.getUSERID());
 			pstmt.setString(2, user.getUSERPW());
 			pstmt.setString(3, user.getUSERNAME());
